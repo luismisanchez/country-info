@@ -1,10 +1,10 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
   <mat-toolbar color="primary" class="example-toolbar">
-    <mat-icon (click)="snav.toggle()">menu</mat-icon>
+    <mat-icon matRipple [matRippleUnbounded]="true" [matRippleCentered]="true" (click)="snav.toggle()">menu</mat-icon>
     <h1 class="example-app-name">Responsive App</h1>
     <span class="spacer"></span>
-    <mat-icon>favorite</mat-icon>
-    <mat-icon>share</mat-icon>
+    <mat-icon matRipple [matRippleUnbounded]="true" [matRippleCentered]="true">favorite</mat-icon>
+    <mat-icon matRipple [matRippleUnbounded]="true" [matRippleCentered]="true">share</mat-icon>
   </mat-toolbar>
 
   <mat-sidenav-container class="example-sidenav-container"
@@ -21,5 +21,3 @@
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
-
-<!--<div *ngIf="!shouldRun">Please open on Stackblitz to see result</div>-->
