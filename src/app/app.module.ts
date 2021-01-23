@@ -14,6 +14,7 @@ import { CountryComponent } from './components/country/country.component';
 import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
 
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: false,
@@ -40,7 +41,8 @@ const globalRippleConfig: RippleGlobalOptions = {
         MatRippleModule,
         MatCardModule,
         FlexLayoutModule,
-        MatTableModule
+        MatTableModule,
+        MatButtonModule
     ],
   providers: [
     {provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig}

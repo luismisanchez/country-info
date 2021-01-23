@@ -13,6 +13,7 @@
 
           <div fxFlex="35" class="sec" fxFlex.xs="30">
 
+<!--            GEO-->
             <mat-card class="card-content mat-elevation-z4">
 
               <h3>GEOGRAPHICAL DATA</h3>
@@ -34,23 +35,25 @@
 
             </mat-card>
 
+<!--            INTL-->
             <mat-card class="card-content mat-elevation-z4">
 
               <h3>INTERNATIONALIZATION</h3>
 
-              <span class="data"><strong>CIOC (Code International Olympic Committee): </strong>ESP (cioc)</span>
-              <span class="data"><strong>Translations: </strong></span>
-              <ul>
-                <li>DE: Spanien (translations.each.key): (translations.each.value)</li>
-                <li>ES: España</li>
-                <li>...</li>
-              </ul>
+              <span class="data"><strong>Demonym: </strong>Spanish (demonym)</span>
               <span class="data"><strong>Languages | ISO-639-1/2 codes: </strong></span>
               <ul>
                 <li>Español (Spanish) | es/spa (languages.each.nativeName) (languages.each.name) | (languages.each.iso639_1)/(languages.each.iso639_2)</li>
                 <li>Español (Spanish) | es/spa</li>
                 <li>...</li>
               </ul>
+              <span class="data"><strong>Translations: </strong></span>
+              <ul>
+                <li>DE: Spanien (translations.each.key): (translations.each.value)</li>
+                <li>ES: España</li>
+                <li>...</li>
+              </ul>
+              <span class="data"><strong>CIOC (Code International Olympic Committee): </strong>ESP (cioc)</span>
               <span class="data"><strong>ISO-3166-1 code: </strong>724 (numericCode)</span>
 
 
@@ -66,6 +69,7 @@
 
           <div fxFlex="35" class="sec">
 
+<!--            ECON.-->
             <mat-card class="card-content mat-elevation-z4">
 
             <h3>Economic data</h3>
@@ -116,8 +120,7 @@
 
             </mat-card>
 
-
-
+<!--                TECH-->
             <mat-card class="card-content mat-elevation-z4">
 
             <h3>Technical data</h3>
@@ -139,6 +142,7 @@
 
           </div>
 
+<!--          FLAG-->
           <div fxFlex="30" class="sec" fxFlex.xs="35">
 
             <mat-card class="card-content flag mat-elevation-z4">
@@ -152,17 +156,29 @@
 
         </div>
 
+<!--        MAPS-->
         <div class="content" fxLayout="row" fxLayout.xs="column" fxFlexFill>
 
-          <div fxFlex="35" class="sec" fxFlex.xs="30">
-            <h3>Technical data</h3>
-          </div>
-          <div fxFlex="35" class="sec">
-            <h3>Technical data</h3>
-          </div>
-          <div fxFlex="30" class="sec" fxFlex.xs="35">
-            <img mat-card-image src="https://restcountries.eu/data/esp.svg" alt="Flag of SPAIN">
-          </div>
+            <div fxFlex="35" class="sec" fxFlex.xs="65">
+              <mat-card class="card-content mat-elevation-z4">
+
+              <h3>GEOLOCATION</h3>
+
+              </mat-card>
+            </div>
+
+            <div fxFlex="65" class="sec" fxFlex.xs="35">
+
+              <mat-card class="card-content flag mat-elevation-z4">
+
+                <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=-23.57666015625,32.10118973232094,13.117675781250002,47.08508535995386&amp;layer=mapnik">
+                </iframe>
+                <button mat-button href="https://www.openstreetmap.org/#map=6/40/-4">SEE IN OpenStreetMap</button>
+              </mat-card>
+            </div>
+
+
 
         </div>
 
