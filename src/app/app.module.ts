@@ -11,6 +11,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MAT_RIPPLE_GLOBAL_OPTIONS, MatRippleModule, RippleGlobalOptions} from '@angular/material/core';
 import { CountryComponent } from './components/country/country.component';
+import {MatCardModule} from '@angular/material/card';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: false,
@@ -34,7 +36,9 @@ const globalRippleConfig: RippleGlobalOptions = {
         MatToolbarModule,
         MatSidenavModule,
         MatListModule,
-        MatRippleModule
+        MatRippleModule,
+        MatCardModule,
+        FlexLayoutModule
     ],
   providers: [
     {provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig}
