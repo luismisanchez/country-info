@@ -38,6 +38,24 @@
 
               <h3>INTERNATIONALIZATION</h3>
 
+              <span class="data"><strong>CIOC (Code International Olympic Committee): </strong>ESP (cioc)</span>
+              <span class="data"><strong>Translations: </strong></span>
+              <ul>
+                <li>DE: Spanien (translations.each.key): (translations.each.value)</li>
+                <li>ES: España</li>
+                <li>...</li>
+              </ul>
+              <span class="data"><strong>Languages | ISO-639-1/2 codes: </strong></span>
+              <ul>
+                <li>Español (Spanish) | es/spa (languages.each.nativeName) (languages.each.name) | (languages.each.iso639_1)/(languages.each.iso639_2)</li>
+                <li>Español (Spanish) | es/spa</li>
+                <li>...</li>
+              </ul>
+              <span class="data"><strong>ISO-3166-1 code: </strong>724 (numericCode)</span>
+
+
+
+
             </mat-card>
 
           </div>
@@ -82,6 +100,17 @@
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
               </table>
+
+              <span class="data"><strong>Regional Blocs: </strong> (regionalBlocs.each)</span>
+              <ul>
+                <li>
+                  European Union (EU) - (regionalBlocs.each.name / (regionalBlocs.each.acronym))
+                  [AKA: (regionalBlocs.each.otherNames / (regionalBlocs.each.otherAcronyms))]
+                </li>
+              </ul>
+              <span class="data"><strong>GINI Index: </strong> 34 (gini)</span>
+
+
 
             </div>
 
