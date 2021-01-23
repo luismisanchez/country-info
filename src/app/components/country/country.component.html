@@ -12,27 +12,34 @@
         <div class="content" fxLayout="row" fxLayout.xs="column" fxFlexFill>
 
           <div fxFlex="35" class="sec" fxFlex.xs="30">
-            <h3>{{'Geographical data' | uppercase}}</h3>
-            <div class="block-content">
-              <span class="data"><strong>Capital: </strong>Madrid (capital)</span>
-              <span class="data"><strong>Population: </strong>654654654 (population)</span>
-              <span class="data"><strong>Area: </strong>5454545 km2 (area)</span>
-              <span class="data"><strong>Borders: </strong> (borders.each)</span>
-              <ul>
-                <li>AND</li>
-                <li>FRA</li>
-                <li>...</li>
-              </ul>
-              <span class="data"><strong>Region: </strong> Europe (region)</span>
-              <span class="data"><strong>Subregion: </strong> Southern Europe (subregion)</span>
 
-            </div>
+            <mat-card class="card-content mat-elevation-z4">
 
+              <h3>GEOGRAPHICAL DATA</h3>
 
+                <div class="block-content">
+                  <span class="data"><strong>Capital: </strong>Madrid (capital)</span>
+                  <span class="data"><strong>Population: </strong>654654654 (population)</span>
+                  <span class="data"><strong>Area: </strong>5454545 km2 (area)</span>
+                  <span class="data"><strong>Borders: </strong> (borders.each)</span>
+                  <ul>
+                    <li>AND</li>
+                    <li>FRA</li>
+                    <li>...</li>
+                  </ul>
+                  <span class="data"><strong>Region: </strong> Europe (region)</span>
+                  <span class="data"><strong>Subregion: </strong> Southern Europe (subregion)</span>
 
+                </div>
 
+            </mat-card>
 
-            <h3>Internationalization</h3>
+            <mat-card class="card-content mat-elevation-z4">
+
+              <h3>INTERNATIONALIZATION</h3>
+
+            </mat-card>
+
           </div>
 
 
@@ -40,13 +47,16 @@
 
 
           <div fxFlex="35" class="sec">
+
+            <mat-card class="card-content mat-elevation-z4">
+
             <h3>Economic data</h3>
 
             <div class="block-content">
 
               <span class="data"><strong>Currencies: </strong> (currencies.each)</span>
 
-              <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource">
 
                 <!--- Note that these columns can be defined in any order.
                       The actual rendered columns are set as a property on the row definition" -->
@@ -75,11 +85,11 @@
 
             </div>
 
+            </mat-card>
 
 
 
-
-
+            <mat-card class="card-content mat-elevation-z4">
 
             <h3>Technical data</h3>
               <div class="block-content">
@@ -94,9 +104,21 @@
                 <span class="data"><strong>Time zones: </strong>UTC (timezones.each)</span>
 
               </div>
+
+            </mat-card>
+
+
           </div>
+
           <div fxFlex="30" class="sec" fxFlex.xs="35">
+
+            <mat-card class="card-content flag mat-elevation-z4">
+
             <img mat-card-image src="https://restcountries.eu/data/esp.svg" alt="Flag of SPAIN">
+              <span class="flag-sub">Flag of Spain (name)</span>
+
+            </mat-card>
+
           </div>
 
         </div>
