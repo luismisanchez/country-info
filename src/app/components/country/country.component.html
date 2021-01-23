@@ -1,16 +1,123 @@
 <div class="container">
   <mat-card class="card mat-elevation-z4">
     <mat-card-header>
-      <mat-card-title>Spain</mat-card-title>
-      <mat-card-subtitle>España, Spagne...</mat-card-subtitle>
+      <mat-card-title>Spain (name)</mat-card-title>
+      <mat-card-subtitle>España (nativeName)</mat-card-subtitle>
     </mat-card-header>
 <!--    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
     <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
-      </p>
+
+      <div class="bounds">
+
+        <div class="content" fxLayout="row" fxLayout.xs="column" fxFlexFill>
+
+          <div fxFlex="35" class="sec" fxFlex.xs="30">
+            <h3>Geographical data</h3>
+            <div class="block-content">
+              <span class="data"><strong>Capital: </strong>Madrid (capital)</span>
+              <span class="data"><strong>Population: </strong>654654654 (population)</span>
+              <span class="data"><strong>Area: </strong>5454545 km2 (area)</span>
+              <span class="data"><strong>Borders: </strong> (borders.each)</span>
+              <ul>
+                <li>AND</li>
+                <li>FRA</li>
+                <li>...</li>
+              </ul>
+              <span class="data"><strong>Region: </strong> Europe (region)</span>
+              <span class="data"><strong>Subregion: </strong> Southern Europe (subregion)</span>
+
+            </div>
+
+
+
+
+
+            <h3>Internationalization</h3>
+          </div>
+
+
+
+
+
+          <div fxFlex="35" class="sec">
+            <h3>Economic data</h3>
+
+            <div class="block-content">
+
+              <span class="data"><strong>Currencies: </strong> (currencies.each)</span>
+
+              <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef> Name </th>
+                  <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+
+                <!-- Code Column -->
+                <ng-container matColumnDef="code">
+                  <th mat-header-cell *matHeaderCellDef> Code </th>
+                  <td mat-cell *matCellDef="let element"> {{element.code}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="symbol">
+                  <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                  <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+
+            </div>
+
+
+
+
+
+
+
+            <h3>Technical data</h3>
+              <div class="block-content">
+                <span class="data"><strong>Top level domains: </strong>.es (topLevelDomain.each)</span>
+                <span class="data"><strong>Phone calling codes: </strong>34 (callingCodes.each)</span>
+                <span class="data"><strong>Time zones: </strong> (timezones.each)</span>
+                <ul>
+                  <li>UTC - 15:56</li>
+                  <li>UTC+01:00 - 16:56</li>
+                  <li>...</li>
+                </ul>
+                <span class="data"><strong>Time zones: </strong>UTC (timezones.each)</span>
+
+              </div>
+          </div>
+          <div fxFlex="30" class="sec" fxFlex.xs="35">
+            <img mat-card-image src="https://restcountries.eu/data/esp.svg" alt="Flag of SPAIN">
+          </div>
+
+        </div>
+
+        <div class="content" fxLayout="row" fxLayout.xs="column" fxFlexFill>
+
+          <div fxFlex="35" class="sec" fxFlex.xs="30">
+            <h3>Technical data</h3>
+          </div>
+          <div fxFlex="35" class="sec">
+            <h3>Technical data</h3>
+          </div>
+          <div fxFlex="30" class="sec" fxFlex.xs="35">
+            <img mat-card-image src="https://restcountries.eu/data/esp.svg" alt="Flag of SPAIN">
+          </div>
+
+        </div>
+
+      </div>
+
+
     </mat-card-content>
     <mat-card-actions>
       <button mat-button>LIKE</button>
