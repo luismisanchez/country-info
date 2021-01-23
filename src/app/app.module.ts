@@ -10,6 +10,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MAT_RIPPLE_GLOBAL_OPTIONS, MatRippleModule, RippleGlobalOptions} from '@angular/material/core';
+import { CountryComponent } from './components/country/country.component';
 
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: false,
@@ -22,7 +23,8 @@ const globalRippleConfig: RippleGlobalOptions = {
 @NgModule({
   declarations: [
     AppComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    CountryComponent
   ],
     imports: [
         BrowserModule,
