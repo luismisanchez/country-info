@@ -15,6 +15,7 @@ import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
+import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: false,
@@ -42,7 +43,8 @@ const globalRippleConfig: RippleGlobalOptions = {
         MatCardModule,
         FlexLayoutModule,
         MatTableModule,
-        MatButtonModule
+        MatButtonModule,
+        LeafletModule
     ],
   providers: [
     {provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig}
