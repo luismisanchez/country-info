@@ -1,6 +1,9 @@
 .spacer {
   flex: 1 1 auto;
 }
+mat-sidenav {
+  min-width: 300px;
+}
 mat-icon{margin-right: 10px;}
 .container {
   display: flex;
@@ -32,4 +35,9 @@ h1.app-name {
   /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
      `<body>` to be our scrolling element for mobile layouts. */
   flex: 1 0 auto;
+}
+.form-field {
+  width: 80%;
+  margin: 10px auto;
+  margin-left: 16px;
 }

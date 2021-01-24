@@ -11,12 +11,33 @@
                          [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
                  [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+
+
+      <!--        TODO: Mover a componente propio-->
+      <!--Autocomplete: https://material.angular.io/components/autocomplete/overview-->
+
       <mat-nav-list>
+
+        <mat-form-field class="form-field">
+          <mat-label>Search country</mat-label>
+          <input matInput type="text" [(ngModel)]="searchCountry" (click)="searchCountry=''">
+          <button mat-button *ngIf="searchCountry" matSuffix mat-icon-button aria-label="Clear" (click)="searchCountry=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+
         <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a>
+
       </mat-nav-list>
+
+<!--      fin TODO-->
+
     </mat-sidenav>
 
     <mat-sidenav-content>
+
+<!--      <router-outlet></router-outlet> ???-->
+
       <app-country></app-country>
     </mat-sidenav-content>
   </mat-sidenav-container>

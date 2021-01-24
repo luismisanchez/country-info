@@ -16,6 +16,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {LeafletModule} from '@asymmetrik/ngx-leaflet';
+import {FormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
 
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: false,
@@ -31,21 +33,23 @@ const globalRippleConfig: RippleGlobalOptions = {
     ToolbarComponent,
     CountryComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatIconModule,
-        MatToolbarModule,
-        MatSidenavModule,
-        MatListModule,
-        MatRippleModule,
-        MatCardModule,
-        FlexLayoutModule,
-        MatTableModule,
-        MatButtonModule,
-        LeafletModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatRippleModule,
+    MatCardModule,
+    FlexLayoutModule,
+    MatTableModule,
+    MatButtonModule,
+    LeafletModule,
+    FormsModule,
+    MatInputModule
+  ],
   providers: [
     {provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig}
   ],

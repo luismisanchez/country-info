@@ -6,8 +6,8 @@
     </mat-card-header>
     <mat-card-content>
       <div class="bounds">
-        <div class="content" fxLayout="row" fxLayout.xs="column" fxFlexFill>
-          <div fxFlex="35" class="sec" fxFlex.xs="30">
+        <div class="content" fxLayout="row" fxLayout.lt-md="column" fxFlexFill>
+          <div fxFlex="35" class="sec">
             <!--            GEO-->
             <mat-card class="card-content mat-elevation-z4">
               <h3>GEOGRAPHICAL DATA</h3>
@@ -102,7 +102,7 @@
             </mat-card>
           </div>
           <!--          FLAG-->
-          <div fxFlex="30" class="sec" fxFlex.xs="35">
+          <div fxFlex="30" class="sec">
             <mat-card class="card-content flag mat-elevation-z4">
               <img mat-card-image src="https://restcountries.eu/data/esp.svg" alt="Flag of Spain (name)">
               <span class="flag-sub">Flag of Spain (name)</span>
@@ -118,7 +118,7 @@
                    leaflet
                    [leafletOptions]="mapOptions">
               </div>
-              <button mat-stroked-button>SEE IN OPENSTREETMAP
+              <button mat-stroked-button>OPENSTREETMAP
                 <mat-icon>open_in_new</mat-icon>
               </button>
             </mat-card>
