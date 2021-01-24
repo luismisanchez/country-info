@@ -27,7 +27,7 @@ export class ToolbarComponent implements OnDestroy {
 
     this.searchCountry = 'Start typing a country name';
 
-    this.mobileQuery = media.matchMedia('(max-width: 960px)');
+    this.mobileQuery = media.matchMedia('(max-width: 1320px)');
     this.mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this.mobileQueryListener);
 
