@@ -18,6 +18,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import { HomeComponent } from './components/home/home.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: false,
@@ -31,7 +33,9 @@ const globalRippleConfig: RippleGlobalOptions = {
   declarations: [
     AppComponent,
     ToolbarComponent,
-    CountryComponent
+    CountryComponent,
+    HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
