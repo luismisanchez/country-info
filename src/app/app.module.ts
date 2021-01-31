@@ -20,6 +20,7 @@ import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
+import {HttpClientModule} from '@angular/common/http';
 
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: false,
@@ -52,7 +53,8 @@ const globalRippleConfig: RippleGlobalOptions = {
     MatButtonModule,
     LeafletModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule
   ],
   providers: [
     {provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig}
