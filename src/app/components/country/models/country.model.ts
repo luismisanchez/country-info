@@ -1,3 +1,6 @@
+import { Injectable } from '@angular/core';
+import { Adapter } from '../../../adapter';
+
 export class Country {
 
   constructor(
@@ -59,4 +62,39 @@ export class RegionalBlocs {
   public acronym: string;
   public name: string;
   public otherNames: string[];
+}
+
+@Injectable({
+  providedIn: 'root',
+})
+
+export class CountryAdapter implements Adapter<Country> {
+  adapt(item: any): Country {
+    return new Country(
+      item.name,
+      item.topLevelDomain,
+      item.alpha2Code,
+      item.alpha3Code,
+      item.callingCodes,
+      item.capital,
+      item.altSpellings,
+      item.region,
+      item.subregion,
+      item.population,
+      item.latlng,
+      item.demonym,
+      item.area,
+      item.gini,
+      item.timezones,
+      item.borders,
+      item.nativeName,
+      item.numericCode,
+      item.currenciescies,
+      item.languagesges,
+      item.translationsations,
+      item.flag,
+      item.regionalBlocsalBlocs,
+      item.cioc
+    );
+  }
 }
