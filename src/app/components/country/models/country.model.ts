@@ -155,8 +155,3 @@ export class RegionalBlocsAdapter implements Adapter<RegionalBlocs> {
     );
   }
 }
-
-
-
-
-
