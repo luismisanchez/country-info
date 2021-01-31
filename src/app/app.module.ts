@@ -23,6 +23,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import {HttpClientModule} from '@angular/common/http';
 import { CountryListComponent } from './components/country-list/country-list.component';
 import { PermalinkPipe } from './pipes/permalink.pipe';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: false,
@@ -40,7 +41,8 @@ const globalRippleConfig: RippleGlobalOptions = {
     HomeComponent,
     FooterComponent,
     CountryListComponent,
-    PermalinkPipe
+    PermalinkPipe,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
