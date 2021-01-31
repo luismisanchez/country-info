@@ -8,11 +8,7 @@ import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
 })
 export class ToolbarComponent implements OnDestroy {
 
-  public searchCountry: string;
-
   mobileQuery: MediaQueryList;
-
-  fillerNav = Array.from({length: 10}, (_, i) => `Nav Item ${i + 1}`);
 
   // fillerContent = Array.from({length: 10}, () =>
   //   `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -24,8 +20,6 @@ export class ToolbarComponent implements OnDestroy {
   private mobileQueryListener: () => void;
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
-
-    this.searchCountry = 'Start typing a country name';
 
     this.mobileQuery = media.matchMedia('(max-width: 1320px)');
     this.mobileQueryListener = () => changeDetectorRef.detectChanges();

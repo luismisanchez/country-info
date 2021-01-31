@@ -7,7 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CountryListComponent implements OnInit {
 
-  constructor() { }
+  fillerNav = Array.from({length: 10}, (_, i) => `Nav Item ${i + 1}`);
+  public searchCountry: string;
+
+
+
+  constructor() {
+
+    this.searchCountry = 'Start typing a country name';
+
+  }
 
   ngOnInit(): void {
   }
