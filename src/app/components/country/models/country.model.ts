@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Adapter } from '../../../adapter';
 
+@Injectable({
+  providedIn: 'root',
+})
+
 export class Country {
 
   constructor(
@@ -33,40 +37,44 @@ export class Country {
 }
 
 export class Translations {
-  public de: string;
-  public es: string;
-  public fr: string;
-  public ja: string;
-  public it: string;
-  public br: string;
-  public pt: string;
-  public nl: string;
-  public hr: string;
-  public fa: string;
+  constructor(
+    public de: string,
+    public es: string,
+    public fr: string,
+    public ja: string,
+    public it: string,
+    public br: string,
+    public pt: string,
+    public nl: string,
+    public hr: string,
+    public fa: string
+  ) {}
 }
 
 export class Currencies {
-  public code: string;
-  public name: string;
-  public symbol: string;
+  constructor(
+    public code: string,
+    public name: string,
+    public symbol: string
+  ) {}
 }
 
 export class Languages {
-  public iso639_1: string;
-  public iso639_2: string;
-  public name: string;
-  public nativeName: string;
+  constructor(
+    public iso639_1: string,
+    public iso639_2: string,
+    public name: string,
+    public nativeName: string
+  ) {}
 }
 
 export class RegionalBlocs {
-  public acronym: string;
-  public name: string;
-  public otherNames: string[];
+  constructor(
+    public acronym: string,
+    public name: string,
+    public otherNames: string[]
+  ) {}
 }
-
-@Injectable({
-  providedIn: 'root',
-})
 
 export class CountryAdapter implements Adapter<Country> {
   adapt(item: any): Country {
@@ -98,3 +106,57 @@ export class CountryAdapter implements Adapter<Country> {
     );
   }
 }
+
+export class TranslationsAdapter implements Adapter<Translations> {
+  adapt(item: any): Translations {
+    return new Translations(
+      item.de,
+      item.es,
+      item.fr,
+      item.ja,
+      item.it,
+      item.br,
+      item.pt,
+      item.nl,
+      item.hr,
+      item.fa
+    );
+  }
+
+}
+
+export class CurrenciesAdapter implements Adapter<Currencies> {
+  adapt(item: any): Currencies {
+    return new Currencies(
+      item.code,
+      item.name,
+      item.symbol
+    );
+  }
+}
+
+export class LanguagesAdapter implements Adapter<Languages> {
+  adapt(item: any): Languages {
+    return new Languages(
+      item.iso639_1,
+      item.iso639_2,
+      item.name,
+      item.nativeName
+    );
+  }
+}
+
+export class RegionalBlocsAdapter implements Adapter<RegionalBlocs> {
+  adapt(item: any): RegionalBlocs {
+    return new RegionalBlocs(
+      item.acronym,
+      item.name,
+      item.otherNames
+    );
+  }
+}
+
+
+
+
+
