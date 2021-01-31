@@ -21,6 +21,7 @@ import {MatInputModule} from '@angular/material/input';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {HttpClientModule} from '@angular/common/http';
+import { CountryListComponent } from './components/country-list/country-list.component';
 
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: false,
@@ -36,7 +37,8 @@ const globalRippleConfig: RippleGlobalOptions = {
     ToolbarComponent,
     CountryComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    CountryListComponent
   ],
   imports: [
     BrowserModule,
