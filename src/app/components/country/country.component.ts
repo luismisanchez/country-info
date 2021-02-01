@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-// import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import {latLng, tileLayer} from 'leaflet';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Observable } from 'rxjs';
 
 
 export interface Currencies {
@@ -21,6 +22,9 @@ const ELEMENT_DATA: Currencies[] = [
 })
 export class CountryComponent implements OnInit {
 
+  public slug: string;
+
+
   mapOptions = {
     layers: [
       tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -36,9 +40,25 @@ export class CountryComponent implements OnInit {
   displayedColumns: string[] = ['name', 'code', 'symbol'];
   dataSource = ELEMENT_DATA;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+
+   // this.slug = this.activatedRoute.snapshot.paramMap.get('id');
+   // console.log(this.slug);
+
+    //this.route.queryParams.subscribe(params => {
+    //  this.slug = params['countrySlug'];
+    //});
+
+    this.slug = this.route.snapshot.paramMap.get('countrySlug');
+    // this.hero$ = this.service.getHero(slug);
+
+
+
 
   }
 
