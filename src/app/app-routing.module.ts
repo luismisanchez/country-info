@@ -7,16 +7,8 @@ import {CountryComponent} from './components/country/country.component';
 // TODO : https://www.techiediaries.com/routing-angular-router/ ????????????
 
 const routes: Routes = [
-  { path: '',
-    component: HomeComponent,
-    children:[
-      {
-        path:':countrySlug', //:type is dynamic here
-        component: CountryComponent
-      }
-    ]
-  },
-  //{ path: ':countrySlug', component: CountryComponent },
+  { path: '', component: HomeComponent },
+  { path: ':countrySlug', component: CountryComponent },
   { path: 'home',   redirectTo: '/', pathMatch: 'full' }, // redirect to `home`
   { path: '**', component: NotFoundComponent },  // Wildcard route for a 404 page
 ];
