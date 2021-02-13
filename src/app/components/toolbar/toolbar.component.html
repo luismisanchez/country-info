@@ -1,7 +1,7 @@
 <div class="container" [class.is-mobile]="mobileQuery.matches">
   <mat-toolbar color="primary" class="toolbar">
     <mat-icon class="icon-clickable" matRipple [matRippleUnbounded]="true" [matRippleCentered]="true" (click)="snav.toggle()">menu</mat-icon>
-    <h1 class="app-name">Country Info</h1>
+    <h1 class="app-name"><a routerLink="/">Country Info</a></h1>
     <span class="spacer"></span>
     <mat-icon matRipple class="icon-clickable" [matRippleUnbounded]="true" [matRippleCentered]="true">favorite</mat-icon>
     <mat-icon matRipple class="icon-clickable" [matRippleUnbounded]="true" [matRippleCentered]="true">share</mat-icon>

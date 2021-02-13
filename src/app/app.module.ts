@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {NgModule, Pipe} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -63,7 +63,8 @@ const globalRippleConfig: RippleGlobalOptions = {
     HttpClientModule
   ],
   providers: [
-    {provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig}
+    {provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig},
+    PermalinkPipe
   ],
   bootstrap: [AppComponent]
 })

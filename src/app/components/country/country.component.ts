@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {latLng, tileLayer} from 'leaflet';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { Observable } from 'rxjs';
-
+import {Router, ActivatedRoute, ParamMap, Params} from '@angular/router';
+import {Observable, Subscription} from 'rxjs';
+import {CountryListApiService} from '../../services/countryListApi/country-list-api.service';
 
 export interface Currencies {
   name: string;
@@ -20,12 +20,11 @@ const ELEMENT_DATA: Currencies[] = [
   templateUrl: './country.component.html',
   styleUrls: ['./country.component.scss']
 })
-export class CountryComponent implements OnInit {
+export class CountryComponent implements OnInit, OnDestroy {
 
   public slug: string;
-
-
-  mapOptions = {
+  public country: any;
+  public mapOptions = {
     layers: [
       tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
         {
@@ -37,29 +36,48 @@ export class CountryComponent implements OnInit {
     center: latLng(40, -4)
   };
 
-  displayedColumns: string[] = ['name', 'code', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  public displayedColumns: string[] = ['name', 'code', 'symbol'];
+  public dataSource = ELEMENT_DATA;
+
+  private paramsSubscription: Subscription;
+  private countrySubscription: Subscription;
+
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    private countries: CountryListApiService
   ) { }
 
   ngOnInit(): void {
 
-   // this.slug = this.activatedRoute.snapshot.paramMap.get('id');
-   // console.log(this.slug);
+    this.slug = this.route.snapshot.params.countryPermalink;
 
-    //this.route.queryParams.subscribe(params => {
-    //  this.slug = params['countrySlug'];
-    //});
+    this.paramsSubscription = this.route.params
+      .subscribe(
+        (params: Params) => {
+          this.slug = params.countryPermalink;
 
-    this.slug = this.route.snapshot.paramMap.get('countrySlug');
-    // this.hero$ = this.service.getHero(slug);
+          this.countrySubscription = this.countries.getData()
+            .subscribe(
+              (data: Observable<any>) => {
+                Object.entries(data).forEach(([key, value]) => {
+                  if (value.slug === this.slug) {
+                    this.country = value;
+                  }
+                });
+              },
+              error => {
+                console.log(error);
+              }
+            );
 
+        }
+      );
+  }
 
-
-
+  ngOnDestroy() {
+    this.paramsSubscription.unsubscribe();
+    this.countrySubscription.unsubscribe();
   }
 
 }

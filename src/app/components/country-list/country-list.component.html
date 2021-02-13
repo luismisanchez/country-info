@@ -12,9 +12,15 @@
   <li class="country-element" *ngFor="let country of countryList">
 
   <!--  TODO: permalink pipe-->
-    <a mat-list-item routerLink="{{country.name | permalink}}" routerLinkActive="active">
+    <a mat-list-item
+       [routerLink]="['/', country.name | permalink]"
+       routerLinkActive="active"
+       [routerLinkActiveOptions]="{exact:true}"
+    (click)="onLoadCountry(country.name)">
       {{country.name}}
     </a>
+
+
 
   </li>
 </ul>

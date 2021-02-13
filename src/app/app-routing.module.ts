@@ -8,13 +8,14 @@ import {CountryComponent} from './components/country/country.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: ':countrySlug', component: CountryComponent },
-  { path: 'home',   redirectTo: '/', pathMatch: 'full' }, // redirect to `home`
+  // { path: 'afghanistan', component: CountryComponent },
+  { path: ':countryPermalink', component: CountryComponent },
+  // { path: 'home',   redirectTo: '/', pathMatch: 'full'}, // redirect to `home`
   { path: '**', component: NotFoundComponent },  // Wildcard route for a 404 page
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
