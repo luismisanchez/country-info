@@ -8,11 +8,8 @@ import {CountryComponent} from './components/country/country.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  // { path: 'afghanistan', component: CountryComponent },
-  { path: ':countryPermalink', component: CountryComponent },
-  { path: 'not-found', component: NotFoundComponent },  // Wildcard route for a 404 page
-  { path: '**',   redirectTo: '/not-found' } // redirect to `home`
-
+  { path: 'not-found', component: NotFoundComponent },
+  { path: ':countryPermalink', component: CountryComponent }
 ];
 
 @NgModule({

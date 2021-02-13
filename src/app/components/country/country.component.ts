@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {latLng, tileLayer} from 'leaflet';
-import {Router, ActivatedRoute, ParamMap, Params} from '@angular/router';
+import {Router, ActivatedRoute, Params } from '@angular/router';
 import {Observable, Subscription} from 'rxjs';
 import {CountryListApiService} from '../../services/countryListApi/country-list-api.service';
 
@@ -45,7 +45,8 @@ export class CountryComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private countries: CountryListApiService
+    private countries: CountryListApiService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -65,6 +66,13 @@ export class CountryComponent implements OnInit, OnDestroy {
                     this.country = value;
                   }
                 });
+
+                if (!this.country && this.slug !== 'not-found') {
+                  this.router.navigate(['/', 'not-found'], { replaceUrl: true }).then(r => {
+                    console.log(r);
+                  });
+                }
+
               },
               error => {
                 console.log(error);
