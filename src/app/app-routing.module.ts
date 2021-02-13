@@ -10,8 +10,9 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   // { path: 'afghanistan', component: CountryComponent },
   { path: ':countryPermalink', component: CountryComponent },
-  // { path: 'home',   redirectTo: '/', pathMatch: 'full'}, // redirect to `home`
-  { path: '**', component: NotFoundComponent },  // Wildcard route for a 404 page
+  { path: 'not-found', component: NotFoundComponent },  // Wildcard route for a 404 page
+  { path: '**',   redirectTo: '/not-found' } // redirect to `home`
+
 ];
 
 @NgModule({
